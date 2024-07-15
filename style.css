@@ -11,3 +11,75 @@ body {
     min-height: 100vh;
     background-color: rgb(43, 43, 92);
 }
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgba(55, 55, 119, 0.56);
+    padding: 4rem 6rem;
+
+    h1 {
+        color: white;
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+
+    .reset {
+        padding: 1rem 1.5rem;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        box-shadow: rgb(0, 0, 0) 2px 2px 4px;
+        text-transform: uppercase;
+    }
+
+    .game {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 440px;
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .item {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            transition: 0.5s;
+            transform: rotateY(180deg);
+        }
+
+        .item.openBox {
+            transform: rotateY(0deg);
+        }
+
+        .item:after {
+            content: '';
+            position: absolute;
+            background-image: url(./images/back.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            inset: 0;
+            transition: 0.5s;
+            transform: rotateY(0deg);
+            backface-visibility: hidden;
+        }
+
+        .openBox:after,
+        .boxMatch:after {
+            transform: rotateY(180deg);
+        }
+    }
+}
