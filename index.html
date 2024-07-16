@@ -6,22 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+    <img src="./images/logo.png" class="logo" alt="">
+
     <div class="container">
 
-        <img src="./images/logo.png" alt="">
-
-        <div class="game">
+        <div class="left">
+            <div id="game-board"></div>
         </div>
-        <!-- /.game -->
+        <!-- /.left -->
+        <div class="rigth">
+            <h2>Memory Game</h2>
+            <p>
+                Abbina i simboli uguali e scopri tutta la griglia
+            </p>
+            <div id="error-counter">Errori: 0</div>
+            <button class="reset" onclick="window.location.reload()">Reset game</button>
+        </div>
+        <!-- /.rigth -->
 
-        <button class="reset" onclick="window.location.reload()">Reset game</button>
+        <script src="main.js"></script>
+
         <!-- /.reset -->
 
     </div>
     <!-- /.container -->
+
+    <audio controls loop>
+        <source src="./music/Interplanetary Odyssey.ogg" type="audio/ogg">
+    </audio>
 
     <script src="./main.js"></script>
 </body>
